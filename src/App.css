@@ -66,8 +66,9 @@ input[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 1px 1px 9px 7px #36181833;
-
   padding: 0.5rem;
+  border: 10px;
+  margin: 14px;
 }
 
 .posts div {
@@ -144,16 +145,18 @@ textarea {
   font-size: 1.2rem;
 }
 button {
-  width: 30%;
-  background-color: rgb(49, 142, 248);
+  width: 20%;
+  background-color: rgb(65, 95, 177);
   padding: 0.8rem;
-  font-weight: 500;
-  border-radius: 4px;
+  font-weight: 200;
+  border-radius: 5px;
+  border-color: transparent;
   float: right;
   color: aliceblue;
-  font-size: 1rem;
+  font-size: 0.7rem;
   cursor: pointer;
-  margin-top: 15px;
+  margin-right: 1rem;
+  margin-top: 5px;
 }
 
 .users-liked {
