@@ -3,7 +3,7 @@ import {listPosts} from '../graphql/queries';
 import {API, graphqlOperation} from 'aws-amplify';
 import DeletePost from "./DeletePost";
 import EditPost from "./EditPost";
-
+import {onCreatePost} from "../graphql/subscriptions";
 
 class DisplayPosts extends Component {
 
@@ -18,12 +18,13 @@ class DisplayPosts extends Component {
     }
     componentDidMount = async () => {
         this.getPosts();
+        this.createPostListener = API.graphql(graphqlOperation(onCreatePost))
     }
     render() {
         const { posts } = this.state;
         return posts.map(post => {
             return (
-                <div className="posts">
+                <div className="posts" key={post.id}>
                     <h4>
                         {post.postOwnerUsername}
                         {": "}
